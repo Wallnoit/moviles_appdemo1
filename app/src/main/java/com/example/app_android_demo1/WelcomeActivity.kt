@@ -15,6 +15,7 @@ class WelcomeActivity : AppCompatActivity() {
 
 
         imprimirMensaje()
+
     }
 
     fun imprimirMensaje() {
