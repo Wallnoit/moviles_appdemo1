@@ -42,7 +42,7 @@ class registro : AppCompatActivity() {
                 id = vehiculo.id
                 edtMarca.setText(vehiculo.marca)
                 edtModelo.setText(vehiculo.modelo)
-                edtAnio.setText(vehiculo.anio)
+                edtAnio.setText(vehiculo.anio.toString())
             }
         }?:kotlin.run{
             with(binding){
@@ -76,6 +76,13 @@ class registro : AppCompatActivity() {
 
     private fun actualizar(vehiculo: Vehiculo) {
 
+        Executors.newSingleThreadExecutor().execute{
+            appDatabase.vehiculoDao().update(vehiculo)
+            runOnUiThread {
+                Toast.makeText(this, "Vehiculo actualizado", Toast.LENGTH_LONG).show()
+                onBackPressed()
+            }
+        }
 
     }
 
@@ -89,4 +96,13 @@ class registro : AppCompatActivity() {
         }
     }
 
+    private fun eliminar(vehiculo: Vehiculo) {
+        Executors.newSingleThreadExecutor().execute {
+            appDatabase.vehiculoDao().delete(vehiculo)
+            runOnUiThread {
+                Toast.makeText(this, "Vehiculo Eliminado", Toast.LENGTH_LONG).show()
+            }
+        }
+
+    }
 }

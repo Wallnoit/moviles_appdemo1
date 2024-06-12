@@ -22,9 +22,19 @@ class VehiculoAdapter(var vehiculos:List<Vehiculo> = emptyList()) :
                 txtMarca.text = vehiculo.marca
                 txtModelo.text = vehiculo.modelo
                 txAnio.text = vehiculo.anio.toString()
-            }
+                btnEdit.setOnClickListener{
+                    setOnClickListenerEditar(vehiculo)
+                }
+                btnDelete.setOnClickListener{
+                    setOnClickListenerEliminar(vehiculo)
+                }
 
+            }
         }
+
+
+
+
 
     }
 
@@ -41,6 +51,7 @@ class VehiculoAdapter(var vehiculos:List<Vehiculo> = emptyList()) :
         val vehiculo = vehiculos[position]
         holder.bind(vehiculo)
         }
+
 
     fun updateListVehiculos(vehiculos: List<Vehiculo>){
         this.vehiculos = vehiculos
