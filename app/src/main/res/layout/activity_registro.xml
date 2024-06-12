@@ -10,12 +10,13 @@
         android:id="@+id/textAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:text="Registro de vehículos"
         android:textSize="24sp"
         android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,13 +25,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="Ingrese la marca del vehiculo"
+        android:inputType="text"
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAction" />
 
@@ -46,8 +48,9 @@
         android:inputType="text"
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/edtMarca" />
 
     <EditText
         android:id="@+id/edtAnio"
@@ -56,11 +59,12 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:hint="Ingrese el año de fabricacion"
-        android:textColorHint="@color/blue"
         android:ems="10"
+        android:hint="Ingrese el año de fabricacion"
         android:inputType="number"
+        android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtModelo" />
 
@@ -69,14 +73,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="30dp"
-        android:text="Registrar"
-        android:textStyle="bold"
         android:backgroundTint="@color/blue"
+        android:text="Registrar"
         android:textColor="@color/white"
+        android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtAnio" />
 </androidx.constraintlayout.widget.ConstraintLayout>

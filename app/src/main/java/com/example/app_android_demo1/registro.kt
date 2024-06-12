@@ -2,14 +2,19 @@ package com.example.app_android_demo1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.example.app_android_demo1.database.AppDatabase
 import com.example.app_android_demo1.databinding.ActivityRegistroBinding
 import com.example.app_android_demo1.models.Vehiculo
 import com.example.app_android_demo1.utils.Constantes
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
 
 class registro : AppCompatActivity() {
 
     private lateinit var  binding: ActivityRegistroBinding
     private var id = 0
+    private val appDatabase: AppDatabase by lazy { AppDatabase.geInstance(this) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
@@ -21,6 +26,8 @@ class registro : AppCompatActivity() {
 
         //manejar eventos
         eventos()
+
+
 
     }
 
@@ -73,6 +80,13 @@ class registro : AppCompatActivity() {
     }
 
     private fun agregar(vehiculo: Vehiculo) {
+        Executors.newSingleThreadExecutor().execute{
+            appDatabase.vehiculoDao().insert(vehiculo)
+            runOnUiThread {
+             Toast.makeText(this, "Vehiculo registrado", Toast.LENGTH_LONG).show()
+                onBackPressed()
+            }
+        }
     }
 
 }
