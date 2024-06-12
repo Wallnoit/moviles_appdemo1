@@ -46,6 +46,8 @@ class listado : AppCompatActivity() {
 
     }
 
+
+
     private fun cargarEventos() {
         binding.floatingActionButton2.setOnClickListener {
             startActivity(Intent(this, registro::class.java))
