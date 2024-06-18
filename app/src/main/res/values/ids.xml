@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="image_pokemon" type="id" />
+    <item name="text_pokemon_name" type="id" />
+    <item name="text_pokemon_details" type="id" />
+</resources>

@@ -75,4 +75,10 @@ dependencies {
 //MANEJO DE BASE DE DATOS LOCAL
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    implementation("androidx.room:room-runtime:2.6.1")}
+    implementation("androidx.room:room-runtime:2.6.1")
+
+    //RENDERIZADO DE IMAGENES
+    implementation("com.squareup.picasso:picasso:2.8")
+
+
+}
