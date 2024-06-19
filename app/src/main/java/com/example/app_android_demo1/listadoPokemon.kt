@@ -3,8 +3,6 @@ package com.example.app_android_demo1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SearchView
-import android.widget.Toast
-import androidx.compose.ui.text.toUpperCase
 import com.example.app_android_demo1.databinding.ActivityListadoPokemonBinding
 
 class listadoPokemon : AppCompatActivity() {
@@ -12,9 +10,7 @@ class listadoPokemon : AppCompatActivity() {
     private lateinit var binding:ActivityListadoPokemonBinding
 
     private val adapter : PokemonAdapter by lazy {
-        PokemonAdapter(
-
-        )
+        PokemonAdapter()
     }
 
     private  var listaPokemons:List<Pokemon> = listOf()
